@@ -1,0 +1,27 @@
+DELETE http://localhost:3000/clear HTTP/1.1
+
+###
+POST http://localhost:3000 HTTP/1.1
+content-type: application/json
+
+{
+    "data": "data"
+}
+###
+GET http://localhost:3000
+
+###
+# @name getToken
+
+GET http://localhost:3000/getToken
+###
+@token = {{getToken.response.body.token}}
+
+###
+POST http://localhost:3000/verifyToken
+content-type: application/json
+authorization: Bearer {{token}}
+
+{
+    "data": "data"
+}
