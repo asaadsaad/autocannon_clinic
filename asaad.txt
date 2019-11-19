@@ -1,0 +1,1 @@
+git checkout used to switch the one to the other branch
